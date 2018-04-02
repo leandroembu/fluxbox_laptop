@@ -1,0 +1,227 @@
+#the following gtk-color-scheme can be overridden by the user via gnome-appearance-properties
+gtk_color_scheme = "fg_color:#000000\nbg_color:#F6F6F6\nbase_color:#FFFFFF\ntext_color:#000000\nselected_bg_color:#BFBF9D\nselected_fg_color:#000000\ntooltip_bg_color:#000000\ntooltip_fg_color:#FFFFFF"
+
+
+
+
+style "default"
+{
+	GtkButton      ::default_border    = { 0, 0, 0, 0 }
+	GtkRange       ::trough_border     = 0
+	GtkRange       ::slider_width      = 15
+	GtkRange       ::stepper_size      = 15
+	GtkScale       ::slider-length     = 31
+	GtkScrollbar   ::min_slider_length = 35
+	GtkPaned       ::handle_size       = 6
+	GtkCheckButton ::indicator_size    = 15
+	GtkTreeView    ::expander_size     = 12
+	GtkExpander    ::expander_size     = 12
+
+	GtkTreeView    ::odd_row_color     = @base_color
+	GtkTreeView    ::even_row_color    = "#FBFBFB"		#for some reason shading does not work here
+
+
+	xthickness = 1
+	ythickness = 1
+
+	fg[NORMAL]        = @fg_color
+	fg[PRELIGHT]      = @fg_color
+	fg[ACTIVE]        = @fg_color
+	fg[SELECTED]      = @selected_fg_color
+	fg[INSENSITIVE]   = darker (@bg_color)
+
+	bg[NORMAL]        = @bg_color
+	bg[PRELIGHT]      = shade (1.02, @bg_color)
+	bg[ACTIVE]        = shade (0.82, @bg_color)
+	bg[SELECTED]	  = shade (1.15, @selected_bg_color)
+	bg[INSENSITIVE]   = @bg_color
+
+
+	text[NORMAL]      = @text_color
+	text[PRELIGHT]    = @text_color
+	text[ACTIVE]      = @selected_fg_color
+	text[SELECTED]    = @selected_fg_color
+	text[INSENSITIVE] = darker (@bg_color)
+
+	base[NORMAL]      = @base_color
+	base[PRELIGHT]    = shade (1.02, @bg_color)
+	base[ACTIVE]      = mix (0.5, @selected_bg_color, @base_color)
+	base[SELECTED]    = shade (1.15, @selected_bg_color)
+	base[INSENSITIVE] = shade (1.01, @bg_color)
+
+	engine "ubuntulooks" 
+	{
+		menubarstyle      = 2       # 0 = flat, 1 = sunken, 2 = flat gradient
+		menuitemstyle     = 1       # 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
+		listviewitemstyle = 1       # 0 = flat, 1 = 3d-ish (gradient)
+		progressbarstyle  = 1       # 0 = candy bar, 1 = fancy candy bar, 2 = flat
+		animation         = FALSE
+	}
+}
+
+
+style "default-darker" = "default"			#darker selection color for widgets that are too light by default, like progressbars for example
+{
+	bg[SELECTED] = shade (0.85, @selected_bg_color)
+}
+
+
+style "button" = "default-darker"
+{
+	xthickness = 3
+	ythickness = 3
+}
+
+
+style "progressbar" = "default-darker"
+{
+	xthickness = 2
+	ythickness = 2
+	fg[PRELIGHT] = "#FFFFFF"			#label of the filled progressbar
+}
+
+
+style "menu" = "default"
+{
+	xthickness = 2
+	bg[NORMAL] = shade (1.05, @bg_color)
+}
+
+
+style "menu-item" = "default"
+{
+	ythickness = 2
+	fg[PRELIGHT]   = @selected_fg_color		#what appears as a "selected" menu item uses the "prelight" color
+	text[PRELIGHT] = @selected_fg_color		#what appears as a "selected" menu item uses the "prelight" color
+}
+
+
+style "frame-title" = "default"
+{
+	fg[NORMAL] = shade (4.00, @fg_color)
+}
+
+
+style "tooltip" = "default"
+{
+	xthickness = 2
+	ythickness = 2
+	fg[NORMAL] = @tooltip_fg_color
+	bg[NORMAL] = @tooltip_bg_color
+}
+
+
+style "metacity-frame" = "default"
+{
+	base[NORMAL] = shade (1.05, @bg_color)		#i arbitrarily use base[NORMAL] to communicate my titlebar gradient top color from gtk to metacity
+}
+
+
+
+style "nautilus-extra-view-widget" = "default"
+{
+	bg[NORMAL] = "#FBFBFB"				#by default would be light blue
+}
+
+
+style "nautilus-horizontal-splitter" = "default"
+{
+	GtkPaned::handle_size = 1			#separator of nautilus sidebar will only be 1px
+}
+
+
+style "panel" = "default"
+{
+	fg[NORMAL] = "#000000"				#USE THIS LINE FOR NORMAL PANEL!
+	bg[NORMAL] = "#AAAAAA"				#USE THIS LINE FOR NORMAL PANEL!
+
+#	fg[NORMAL] = "#FFFFFF"				#USE THIS LINE FOR INVERTED PANEL!
+#	bg[NORMAL] = "#404040"				#USE THIS LINE FOR INVERTED PANEL!
+
+#	bg_pixmap[NORMAL] = "panel.png"			#USE THIS LINE FOR PIXMAP PANEL!
+}
+
+
+style "panel-toplevel" = "panel"
+{
+	xthickness = 0					#no ugly panel edges
+	ythickness = 0					#no ugly panel edges
+}
+
+
+style "panel-button" = "button"
+{
+	fg[NORMAL] = "#000000"				#USE THIS LINE FOR NORMAL PANEL!
+	bg[NORMAL] = "#EAEAEA"				#USE THIS LINE FOR NORMAL PANEL!
+
+#	fg[NORMAL] = "#FFFFFF"				#USE THIS LINE FOR INVERTED PANEL!
+#	bg[NORMAL] = "#808080"				#USE THIS LINE FOR INVERTED PANEL!
+
+	bg[ACTIVE] = @bg_color				#active panel buttons will have the color of the window they represent
+}
+
+
+style "panel-menu-item" = "menu-item"
+{
+	fg[NORMAL] = "#000000"				#USE THIS LINE FOR NORMAL PANEL!
+	bg[NORMAL] = "#AAAAAA"				#USE THIS LINE FOR NORMAL PANEL!
+
+#	fg[NORMAL] = "#FFFFFF"				#USE THIS LINE FOR INVERTED PANEL!
+#	bg[NORMAL] = "#404040"				#USE THIS LINE FOR INVERTED PANEL!
+}
+
+
+
+
+#widget styles
+class "GtkWidget"      			style "default"
+
+class "GtkButton"      			style "button"
+class "GtkCombo"    			style "button"
+class "GtkEntry"       			style "button"
+
+class "GtkRange"       			style "default-darker"	#range is scrollbars and sliders
+class "GtkProgressBar" 			style "progressbar"
+
+class "GtkMenu"        			style "menu"
+class "GtkMenuItem"    			style "menu-item"
+
+class "MetaFrames"     			style "metacity-frame"	#metacity window borders
+
+widget_class "*MenuItem.*" 		style "menu-item"	#things within menu items should be like menu items i guess
+widget_class "*MenuItem.*ProgressBar*" 	style "progressbar"	#but progressbars within menus should still look like progressbars
+
+widget "gtk-tooltip*"			style "tooltip"
+
+widget_class "*.GtkTreeView.GtkButton" 	style "default"		#listview column headers
+widget_class "*.GtkCTree.GtkButton" 	style "default"		#listview column headers
+widget_class "*.GtkList.GtkButton" 	style "default"		#listview column headers
+widget_class "*.GtkCList.GtkButton" 	style "default"		#listview column headers
+
+widget_class "*.GtkFrame.GtkLabel" 	style "frame-title"
+
+
+#the following widgets are application-specific
+#NAUTILUS
+widget "*.nautilus-extra-view-widget" 		style:highest "nautilus-extra-view-widget"	#nautilus widget displayed in special folders, for example trash
+widget "*.NautilusHorizontalSplitter"		style "nautilus-horizontal-splitter"		#separator of nautilus sidebar
+
+#PANEL
+widget "*PanelWidget*" 				style "panel"
+widget "*PanelApplet*" 				style "panel"
+widget "*fast-user-switch*"			style "panel"
+class "PanelApp*" 				style "panel"
+class "PanelToplevel*" 				style "panel"
+widget_class "*Mail*" 				style "panel"
+widget_class "*notif*" 				style "panel"
+widget_class "*Notif*" 				style "panel"
+widget_class "*FreqApplet*"			style "panel"
+widget "PanelToplevel"				style "panel-toplevel"		#this is kind of the panel itself
+widget_class "*PanelToplevel.*<GtkButton>*"	style:highest "panel-button"	#panel buttons ("highest" is required to overrule "PanelWidget")
+widget_class "*PanelToplevel.*MenuItem*"	style:highest "panel-menu-item"	#panel menu-item ("highest" is required to overrule "PanelWidget")
+
+#GEDIT AND EOG
+widget_class "*.EogMessageArea*"		style "tooltip"	#bg uses tooltip style, text is a child widget and does not. with "*" we get the child widget
+widget_class "*.EogMessageArea.*<GtkButton>*"	style "button"	#button is also a child widget, but is supposed to look normal again
+widget_class "*.GeditMessageArea*"		style "tooltip"	#bg uses tooltip style, text is a child widget and does not. with "*" we get the child widget
+widget_class "*.EogMessageArea.*<GtkButton>*"	style "button"	#button is also a child widget, but is supposed to look normal again

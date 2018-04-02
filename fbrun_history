@@ -1,0 +1,30 @@
+rofi
+rofi -show dmenu
+rofi -show drun
+rofi -show run
+rofi -key-run F12
+rofi -show window
+rofi -show drun -key-run F12
+htop
+<<<<<<< HEAD
+volumeicon
+=======
+>>>>>>> 89d06a2217f0e7cfe22862daebd9e40b27ef1774
+xterm
+pcmanfm
+leafpad
+tilix
+compton
+volumeicon
+notify-send oi
+dunst
+gnome-screenshot
+<<<<<<< HEAD
+tilix
+compton
+=======
+nm-applet
+>>>>>>> 89d06a2217f0e7cfe22862daebd9e40b27ef1774
+cbatticon
+clipman
+xfce4-clipman

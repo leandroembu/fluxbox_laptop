@@ -1,0 +1,22 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=guvcview) (class=guvcview)
+  [Dimensions]	{17% 28%}
+  [Position]	(UPPERLEFT)	{83% 72%}
+  [Deco]	{NORMAL}
+  [Layer]	{6}
+[end]
+[app] (name=tilix) (class=Tilix)
+  [Dimensions]	{53% 66%}
+  [Position]	(UPPERLEFT)	{25% 19%}
+[end]
+[app] (name=vlc) (class=vlc) (role=vlc-main)
+  [Dimensions]	{59% 83%}
+  [Position]	(UPPERLEFT)	{41% 17%}
+[end]
+[app] (name=Opera) (class=Opera)
+  [Dimensions]	{75% 82%}
+  [Position]	(UPPERLEFT)	{5% 5%}
+[end]

@@ -16,41 +16,56 @@
 #     session.menuFile: ~/.fluxbox/my-menu
 [begin] (Fluxbox)
 [encoding] {UTF-8}
-      [exec] (xterm) {xterm} 
-      [exec] (chromium) {chromium} 
+      [exec] (Tilix) {tilix} 
+      [exec] (Xterm) {xterm} 
+      [exec] (Firefox) {firefox}
+      [exec] (Sylpheed) {sylpheed} 
+      [exec] (Telegram) {telegram-desktop}
       [exec]   (Run) {fbrun} 
-[submenu] (Terminals)
-      [exec]   (xterm) {xterm} 
-[end]
-[submenu] (Net)
+      [separator]
+      [exit] (Exit) 
+      [separator] 
+[submenu] (Internet)
 [submenu] (Browsers)
-      [exec]   (chromium) {chromium} 
-      [exec]   (links-graphic) {links -driver x fluxbox.org} 
-      [exec]   (links) {xterm -e links fluxbox.org} 
+      [exec]   (Firefox) {firefox} 
+      [exec]   (Google Chrome) {google-chrome-stable} 
+      [exec]   (Opera) {env QT_XFT=true opera} 
 [end]
 [submenu] (Mail)
-      [exec]   (sylpheed) {sylpheed} 
+      [exec]   (Sylpheed) {sylpheed} 
 [end]
 [submenu] (FTP)
-      [exec]   (ftp) {xterm -e ftp} 
+      [exec]   (Filezilla) {filezilla} 
 [end]
 [end]
 [submenu] (Editors)
-      [exec]   (nano) {xterm -e nano} 
-      [exec]   (vim) {xterm -e vim} 
-      [exec]   (vi) {xterm -e vi} 
+      [exec]   (Gedit) {gedit} 
+      [exec]   (Nano) {tilix -e nano} 
+      [exec]   (Sublime Text) {subl3} 
+      [exec]   (Vim) {tiliz -e vim} 
 [end]
 [submenu] (Multimedia)
-[submenu] (Audio)
-      [exec]   (audacious) {audacious} 
+[submenu] (Graphics)
+      [exec]   (Gimp) {gimp} 
+      [exec]   (Inkscape) {inkscape} 
+[end]
+[submenu] (Audio & Video)
+      [exec]   (Audacity) {audacity} 
+      [exec]   (KDEnlive) {flatpak run org.kde.kdenlive} 
+      [exec]   (Clementine) {clementine} 
+      [exec]   (Spotify) {spotify} 
+      [exec]   (Vlc) {vlc} 
 [end]
 [submenu] (X-utils)
       [exec] (Reload .Xdefaults) {xrdb -load $HOME/.Xdefaults} 
 [end]
 [end]
+[submenu] (Office)
+      [exec]   (xpdf) {xpdf} 
+[end]
 [submenu] (System Tools)
-      [exec]   (top) {xterm -e top} 
-      [exec]   (htop) {xterm -e htop} 
+      [exec]   (Htop) {tilix -e htop} 
+      [exec]   (System Monitor) {gnome-system-monitor} 
 [end]
 [submenu] (Fluxbox menu)
       [config] (Configure) 
@@ -62,6 +77,8 @@
 [end]
       [workspaces] (Workspace List) 
 [submenu] (Tools)
+      [exec] (Screenshot - JPG) {import screenshot.jpg && display -resize 50% screenshot.jpg} 
+      [exec] (Screenshot - PNG) {import screenshot.png && display -resize 50% screenshot.png} 
       [exec] (Run) {fbrun} 
       [exec] (Regen Menu) {fluxbox-generate_menu} 
 [end]
@@ -69,8 +86,6 @@
       [reconfig] (Reload config) 
       [restart] (Restart) 
       [exec] (About) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center} 
-      [separator] 
-      [exit] (Exit) 
 [end]
 [endencoding]
 [end]

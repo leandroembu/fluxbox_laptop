@@ -12,14 +12,10 @@ htop
 xterm
 pcmanfm
 leafpad
-tilix
-compton
 notify-send oi
 dunst
 gnome-screenshot
 <<<<<<< HEAD
-tilix
-compton
 =======
 nm-applet
 >>>>>>> 89d06a2217f0e7cfe22862daebd9e40b27ef1774
@@ -27,5 +23,14 @@ cbatticon
 clipman
 xfce4-clipman
 pulseaudio
-blueman-applet
 volumeicon
+paramano
+blueman-applet
+screenkey
+tilix
+shutdown
+compton
+xfce4-screenshooter
+gksu virt-manager
+xcompmgr
+gksu unetbootin

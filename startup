@@ -18,10 +18,11 @@ setxkbmap us -variant intl
 # xrandr --output LVDS1 --off --output VGA1 --auto &
 nitrogen --restore &
 nm-applet &
-compton &
+xcompmgr &
 volumeicon &
-cbatticon &
+paramano &
 xfce4-clipman &
+plank &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.

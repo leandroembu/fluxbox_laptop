@@ -2,13 +2,15 @@
 Mod4 d :ShowDesktop
 # lock screen
 Mod4 l :ExecCommand dm-tool lock
+# Show all windows
+Mod4 s :ExecCommand skippy-xd
 
 # Tiling
 Mod4 Left  :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Left}
 Mod4 Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 00 00 Right}
 Mod4 Up    :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Up}
 Mod4 Down  :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Bottom}
-Mod4 6     :MacroCmd {ResizeTo 70% 70%}  {MoveTo 00 00 Center}
+Mod4 6     :MacroCmd {ResizeTo 70% 90%}  {MoveTo 00 00 Center}
 Mod4 7     :MacroCmd {ResizeTo 50% 50%}  {MoveTo 00 00 TopLeft}
 Mod4 8     :MacroCmd {ResizeTo 50% 50%}  {MoveTo 00 00 TopRight}
 Mod4 9     :MacroCmd {ResizeTo 50% 50%}  {MoveTo 00 00 BottomLeft}
@@ -27,8 +29,11 @@ Mod4 comma                   :ExecCommand playerctl previous
 Mod4 period                  :ExecCommand playerctl next
 Mod4 slash                   :ExecCommand playerctl play-pause
 
-# open Opera browser
-Mod4 w :Exec opera
+# open Tilix Terminal
+Control Mod1 t :Exec tilix
+
+# open Firefox browser
+Mod4 w :Exec firefox
 # open Sylpheed Mail Client
 Mod4 m :Exec sylpheed
 # open thunar

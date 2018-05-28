@@ -20,3 +20,12 @@
   [Dimensions]	{75% 82%}
   [Position]	(UPPERLEFT)	{5% 5%}
 [end]
+[app] (name=xpad) (class=xpad) (role=info-2LYZHZ)
+  [Layer]	{6}
+[end]
+[app] (name=xpad) (class=xpad) (role=info-5Y5JHZ)
+  [Dimensions]	{36% 32%}
+  [Position]	(UPPERLEFT)	{74% 62%}
+  [Deco]	{NORMAL}
+  [Layer]	{6}
+[end]

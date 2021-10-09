@@ -29,8 +29,8 @@ Mod4 comma                   :ExecCommand playerctl previous
 Mod4 period                  :ExecCommand playerctl next
 Mod4 slash                   :ExecCommand playerctl play-pause
 
-# open Tilix Terminal
-Control Mod1 t :Exec tilix
+# open XFCE Terminal
+Control Mod1 t :Exec xfce4-terminal
 
 # open Firefox browser
 Mod4 w :Exec firefox
